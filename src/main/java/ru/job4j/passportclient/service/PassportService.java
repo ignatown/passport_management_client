@@ -1,5 +1,6 @@
 package ru.job4j.passportclient.service;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
@@ -11,7 +12,8 @@ import java.util.List;
 
 @Service
 public class PassportService {
-    private static final String URL = "http://localhost:8080/";
+    @Value("http://localhost:8080/")
+    private String URL;
 
     private final RestTemplate restTemplate;
 
